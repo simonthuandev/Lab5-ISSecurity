@@ -1,8 +1,8 @@
 import hashlib
 
 
-def sha256_hash(text):
+def sha256_hash(text: str) -> str:
     """Tính SHA-256 hash của chuỗi văn bản."""
-    if not text.strip():
-        raise ValueError("input cannot be empty!")
-    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+    encoded = text.encode("utf-8")
+    digest = hashlib.sha256(encoded).hexdigest()
+    return digest
